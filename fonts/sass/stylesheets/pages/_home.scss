@@ -1,0 +1,377 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+#hero {
+  color: app-color(hero, 'foreground');
+
+  // Special case for hero in portrait mode
+  @media (min-height: 568px) {
+    height: 100vh;
+  }
+
+  &:before {
+    background-color: app-color(hero, 'overlay');
+
+    @include app-styles($overlay);
+  }
+
+  @include app-styles($hero);
+
+  .vertical-align {
+    @include app-styles($hero-vertical-align)
+  }
+
+  h1 {
+    @include app-styles($hero-h1);
+  }
+
+  #hero-span {
+    @include app-styles($hero-span);
+  }
+
+  #cata-span {
+    font-family: $accent-font;
+
+    @include app-styles($cata-span);
+  }
+
+  .hero-footer {
+    background-color: app-color(hero-footer);
+
+    @include app-styles($hero-footer);
+
+    span {
+      color: app-color(hero-footer-span, 'foreground');
+
+      @include app-styles($hero-footer-span);
+    }
+
+    a {
+      @include app-styles($hero-footer-a);
+    }
+  }
+}
+
+#who {
+  background-color: app-color(who);
+
+  @include app-styles($who);
+}
+
+#possibilities {
+  @include app-styles($possibilities);
+
+  .half-video {
+    @include app-styles($poss-half-video);
+
+    .cont-first {
+      @include app-styles($poss-half-video-cont-first);
+    }
+
+    .cont-second {
+      background-color: app-color(poss-cont-second);
+
+      @include app-styles($poss-half-video-cont-second);
+
+      .fa-quote-left {
+        color: app-color(fa-quote, 'foreground');
+        @include app-styles($fa-quote);
+      }
+    }
+  }
+
+  .poss-numb {
+    h2 {
+      @include app-styles($poss-numb-h2);
+    }
+
+    .poss-numb-list {
+      li:before {
+        @include app-styles($poss-numb-list-before);
+      }
+    }
+  }
+}
+
+.claim-tickets {
+  background-color: app-color(claim-tickets);
+
+  @include app-styles($claim-tickets);
+
+  .claim-tickets-form {
+    background-color: app-color(form-app);
+
+    h3 {
+      @include app-styles($claim-tickets-h3);
+    }
+
+    @include app-styles($claim-tickets-form);
+  }
+}
+
+#production {
+  h2 {
+    @include app-styles($prod-h2);
+  }
+
+  #prod-cont {
+    @include app-styles($prod-cont);
+  }
+
+  .prod-list-cont {
+    @include app-styles($prod-list-cont);
+
+    .fa-ul {
+      .fa-check {
+        color: app-color(production-icon, 'foreground');
+      }
+    }
+  }
+
+  .prod-video-cont {
+    @include app-styles($prod-video-cont);
+  }
+}
+
+#join-us {
+  @include app-styles($join-us);
+
+  &:before {
+    background-color: app-color(join-us, 'overlay');
+
+    @include app-styles($overlay);
+  }
+
+  h2, p {
+    color: app-color(join-us, 'foreground');
+  }
+
+  .btn-join {
+    background-color: app-color(join-us-btn);
+    color: app-color(join-us-btn, 'foreground');
+    outline: app-color(join-us-btn) !important;
+
+    @include app-styles($join-us-btn);
+
+    &:hover, &:focus, &:active {
+      background-color: app-color(join-us-btn) !important;
+      color: app-color(join-us-btn, 'hover-focus');
+    }
+  }
+}
+
+// Slide pages styles
+.slide-page {
+  @include app-styles($slide-page);
+
+  .slide-page-cont {
+    @include app-styles($slide-page-cont);
+  }
+}
+
+.slide-page-header {
+  background-color: app-color(slide-page-header);
+
+  @include app-styles($slide-page-header);
+
+  h2, p {
+    color: app-color(slide-page-header, 'foreground');
+  }
+}
+
+.slide-page-overflow {
+  @include app-styles($slide-page-overflow);
+}
+
+.slide-body-overflow {
+  @include app-styles($slide-body-overflow);
+}
+
+.claim-tickets-slide {
+  @include app-styles($claim-tickets-slide);
+}
+
+#agenda {
+  #learn {
+    p {
+      @include app-styles($learn-p);
+    }
+  }
+
+  #day-one {
+    @include app-styles($day-one);
+
+    .acq-header {
+      @include app-styles($day-one-header);
+
+      h2 {
+        @include app-styles($day-one-h2);
+      }
+    }
+
+    .content {
+      @include app-styles($day-one-content);
+
+      h3 {
+        @include app-styles($day-one-content-h3);
+      }
+
+      .schedule-topic {
+        @include app-styles($schedule-topic);
+
+        h4 {
+          color: app-color(schedule-topic, 'time-frame');
+        }
+      }
+    }
+
+    .day-one-cont-first {
+      @include app-styles($day-one-cont-first);
+
+      .content {
+        background-color: app-color(agenda-day-one, 'cont-first');
+      }
+    }
+
+    .day-one-cont-second {
+      @include app-styles($day-one-cont-second);
+
+      .content {
+        background-color: app-color(agenda-day-one, 'cont-second');
+      }
+    }
+  }
+
+  #day-two {
+    @include app-styles($day-two);
+
+    &:before {
+      background-color: app-color(agenda-day-two, 'overlay');
+
+      @include app-styles($overlay);
+    }
+
+    h2, h3, h4, p {
+      color: app-color(agenda-day-two, 'foreground');
+    }
+
+    h2 {
+      @include app-styles($day-two-h2);
+    }
+
+    h3 {
+      @include app-styles($day-two-h3);
+    }
+
+    .schedule-topic {
+      @include app-styles($schedule-topic);
+    }
+  }
+}
+
+#dates-location {
+  #locations {
+    .loc-cont {
+      @include app-styles($loc-cont);
+
+      .fa-map-marker, .loc-date {
+        color: app-color(loc-cont-icon-span, 'foreground');
+      }
+
+      .fa-map-marker {
+        @include app-styles($loc-cont-icon);
+      }
+
+      h3 {
+        @include app-styles($loc-cont-h3);
+      }
+
+      span {
+        @include app-styles($loc-cont-span);
+      }
+    }
+
+    .loc-over {
+      .fa-map-marker, h3, .loc-date, span {
+        color: app-color(loc-over, 'foreground');
+      }
+    }
+  }
+}
+
+#contact {
+  #reserve {
+    form {
+      @include app-styles($contact-form);
+    }
+  }
+
+  #specialist {
+    h2 {
+      @include app-styles($specialist-h2);
+    }
+
+    .specialist-icons-cont {
+      @include app-styles($specialist-icons-cont);
+
+      .specialist-icon {
+        color: app-color(specialist-icon);
+
+        .fa-inverse {
+          @include app-styles($fa-inverse);
+        }
+      }
+    }
+  }
+}
+
+#speakers {
+  #meet-speaker {
+    h3, .subj-title {
+      color: app-color(meet-speaker, 'foreground');
+    }
+
+    .meet-img {
+      @include app-styles($meet-img);
+    }
+
+    h3 {
+      @include app-styles($meet-h3);
+    }
+
+    .subj-title {
+      @include app-styles($meet-subj-title);
+    }
+  }
+
+  #meet-team {
+    h3, .subj-title {
+      color: app-color(meet-team, 'title');
+    }
+
+    .meet-img {
+      @include app-styles($meet-img);
+    }
+
+    .subj-title {
+      @include app-styles($meet-subj-title);
+    }
+  }
+}
+
+#testimonials {
+  .testimonial-video {
+    @include app-styles($testimonial-video);
+  }
+}
+
+#faq {
+  #faq-header {
+    @include app-styles($faq-header);
+
+    h2 {
+      @include app-styles($faq-h2);
+    }
+  }
+}

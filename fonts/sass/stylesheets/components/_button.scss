@@ -1,0 +1,60 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn-app {
+  background-color: app-color(btn-app);
+  color: app-color(btn-app, 'foreground');
+  outline: app-color(btn-app) !important;
+
+  @include app-styles($btn-app);
+
+  &:hover, &:focus, &:active {
+    background-color: app-color(btn-app, 'hover-focus') !important;
+    color: app-color(btn-app, 'foreground');
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+
+  color: app-color(btn-secondary, 'foreground');
+
+  border: 1px solid app-color(btn-secondary, 'border');
+
+  @include app-styles($btn-secondary);
+
+  &:hover, &:focus, &:active {
+    background-color: transparent !important;
+  }
+}
+
+.btn-round {
+  background-color: app-color(btn-app);
+  color: app-color(btn-app, 'foreground');
+
+  @include app-styles($btn-round);
+
+  &:hover, &:focus, &:active {
+    background-color: app-color(btn-app, "hover-focus");
+    color: app-color(btn-app, 'foreground');
+  }
+}
+
+.btn-disabled {
+  background-color: app-color(btn-disabled);
+
+  @include app-styles($btn-disabled);
+}
+
+.btn-scroll-top {
+  @include app-styles($btn-scroll-top);
+}
+
+.btn-small {
+  @include app-styles($btn-small);
+}
+
+.btn-exit {
+  @include app-styles($btn-exit);
+}

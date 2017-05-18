@@ -1,0 +1,83 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// Compability across browsers.
+@mixin browser-compability($property, $value) {
+
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}: #{$value};
+  -ms-#{$property}: #{$value};
+  #{$property}: #{$value};
+}
+
+// Media queries for responsive design.
+@mixin respond-to($breakpoint) {
+
+  // Retrieves the value from the key
+  $value: map-get($breakpoints, $breakpoint);
+
+  // if the key exists in the map
+  @if $value != null {
+
+    // prints a media query based on the value
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+
+  // if the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// Element styles generator.
+@mixin styles-generator($property, $value) {
+
+  @if index($browser-comp-properties, $property) != null {
+
+    @include browser-compability($property, $value);
+
+  } @else {
+
+    #{$property}: #{$value};
+  }
+}
+
+// Application's element styles.
+@mixin app-styles($element) {
+
+  // iterate through each element property
+  @each $property, $property-map in $element {
+
+    // if property has mobile styles
+    @if map-has-key($property-map, 'mobile') {
+
+      $value: map-get($property-map, 'mobile');
+
+      @include styles-generator($property, $value);
+    }
+  }
+
+  // iterate through each breakpoint
+  @each $breakpoint in map-keys($breakpoints) {
+
+    // generate media query
+    @include respond-to($breakpoint) {
+
+      // iterate through each element property
+      @each $property, $property-map in $element {
+
+        // if property has styles for current breakpoint
+        @if map-has-key($property-map, $breakpoint) {
+
+          $value: map-get($property-map, $breakpoint);
+
+          @include styles-generator($property, $value);
+        }
+      }
+    }
+  }
+}

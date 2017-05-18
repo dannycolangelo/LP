@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer {
+  background-color: app-color(footer);
+  color: app-color(footer, 'foreground');
+
+  @include app-styles($footer);
+
+  .footer-logos {
+    @include app-styles($footer-info-logos);
+  }
+
+  p {
+    @include app-styles($footer-info-p);
+  }
+}

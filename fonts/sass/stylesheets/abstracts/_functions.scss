@@ -1,0 +1,8 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+// Retrieves app color
+@function app-color($element, $type: 'background') {
+  @return map-get(map-get($app-colors, $element), $type);
+}

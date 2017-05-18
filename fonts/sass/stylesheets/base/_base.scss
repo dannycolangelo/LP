@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+html, body {
+  font-family: $app-font;
+}
+
+h2 {
+  color: app-color(h, 'foreground');
+
+  @include app-styles($h2);
+}
+
+h3 {
+  @include app-styles($h3);
+}
+
+p, li {
+  color: app-color(p-li, 'foreground');
+}
+
+p {
+  @include app-styles($p);
+}
+
+a {
+  &:hover, &:focus {
+    @include app-styles($a);
+  }
+}
+
+ul {
+  @include app-styles($ul);
+}
+
+li {
+  @include app-styles($li);
+}
+
+ol {
+  @include app-styles($ol);
+
+  li {
+    @include app-styles($ol-li);
+
+    &:nth-child(odd) {
+      @include app-styles($ol-li-odd);
+    }
+
+    &:before {
+      font-family: $app-font;
+      color: app-color(ol-li-icon, 'foreground');
+      border: 2px solid app-color(ol-li-icon, 'foreground');
+
+      @include app-styles($ol-li-before);
+    }
+  }
+}
+
+section {
+  background-color: app-color(section);
+
+  @include app-styles($section);
+}
+
+blockquote {
+  @include app-styles($blockquote);
+
+  p, footer {
+    color: app-color(poss-cont-second, 'foreground');
+
+    @include app-styles($blockquote-text);
+  }
+}
+
+.form-app {
+  background-color: app-color(form-app);
+
+  @include app-styles($form-app);
+}
+
+.thumbnail {
+  background-color: transparent;
+
+  @include app-styles($thumbnail);
+
+  .caption {
+    @include app-styles($thumbnail-caption);
+
+    .thumbnail-header {
+      @include app-styles($thumbnail-header);
+    }
+  }
+}
+
+.subj-name {
+  @include app-styles($subj-name);
+}
+
+.subj-title {
+  @include app-styles($subj-title);
+}
+
+.accordion-app {
+  @include app-styles($accordion-app);
+
+  .panel-default {
+    @include app-styles($accordion-app-panel);
+
+    .panel-heading {
+      background-color: app-color(accordion-app, 'head-background');
+      color: app-color(accordion-app, 'head-foreground');
+
+      @include app-styles($accordion-app-heading);
+
+      .panel-title {
+        @include app-styles($accordion-app-title);
+
+        .indicator {
+          @include app-styles($accordion-app-indicator);
+        }
+
+        .indicator-collapsed {
+          @include app-styles($accordion-app-indicator-collapsed);
+        }
+      }
+    }
+
+    .panel-body {
+      background-color: app-color(accordion-app, 'body-background');
+
+      p {
+        color: app-color(accordion-app, 'body-foreground');
+      }
+
+      @include app-styles($accordion-app-body);
+    }
+  }
+}
+
+.vertical-align {
+  @include app-styles($vertical-align);
+}
+
+.b-roll-cont {
+  @include app-styles($b-roll-cont);
+
+  .b-roll {
+    @include app-styles($b-roll);
+  }
+}
+
+.ios-device {
+  #hero, .claim-tickets, #join-us {
+    background-attachment: inherit;
+  }
+}
+
+.navbar-toggle {
+  z-index: 999999999;
+}
+
+.video-label {
+  background-color: app-color(video-label);
+  color: app-color(video-label, 'foreground');
+
+  @include app-styles($video-label);
+
+  h3 {
+    @include app-styles($video-label-h3);
+  }
+}

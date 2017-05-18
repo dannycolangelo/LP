@@ -1,0 +1,72 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.navbar {
+  background-color: transparent;
+
+  @include app-styles($navbar);
+
+  .nav-container {
+    @include app-styles($nav-container);
+  }
+
+  .navbar-header {
+    @include app-styles($navbar-header);
+
+    .navbar-toggle {
+      @include app-styles($navbar-toggle);
+
+      .fa-bars {
+        @include app-styles($fa-bars);
+
+        color: app-color(fa-bars, 'collapsed');
+      }
+    }
+
+    .collapsed {
+      .fa-bars {
+          color: app-color(fa-bars, 'foreground');
+      }
+    }
+
+    .navbar-brand {
+      @include app-styles($navbar-brand);
+    }
+  }
+
+  .navbar-collapse {
+    background-color: app-color(navbar);
+
+    @include app-styles($navbar-collapse);
+
+    .navbar-right {
+      @include app-styles($navbar-right);
+
+      .nav-item {
+        @include app-styles($nav-item);
+
+        .nav-link {
+          background-color: transparent;
+          color: app-color(nav-link, 'foreground');
+
+          @include app-styles($nav-link);
+        }
+      }
+
+      .btn-nav {
+        @include app-styles($btn-nav);
+
+        &:hover, &:focus, &:active {
+          background-color: app-color(btn-app, 'hover-focus');
+        }
+      }
+    }
+  }
+}
+
+.nav-scrolled {
+  background-color: app-color(navbar);
+
+  @include app-styles($nav-scrolled);
+}

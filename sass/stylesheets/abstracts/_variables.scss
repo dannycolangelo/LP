@@ -1,0 +1,1643 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Media querie breakpoints.
+$breakpoints: (
+	'small': 768px,
+	'medium': 992px,
+	'large': 1200px
+);
+
+// Browser compability properties.
+$browser-comp-properties: (
+  'border-radius',
+  'box-sizing',
+  'box-shadow',
+  'transform',
+  'transition',
+	'box',
+	'flex',
+	'box-align',
+	'flex-align',
+	'align-items'
+);
+
+// Application fonts.
+$app-font: 'Roboto', sans-serif;
+$app-font-condensed: 'Roboto Condensed', sans-serif;
+$accent-font: 'Droid Serif', serif;
+
+// Color palette.
+$palette: (
+	white: (
+		'base': #ffffff,
+		'dark': darken(#ffffff, 4%),
+		'transparent': transparentize(#ffffff, 0.5)
+	),
+	gallery: (
+		'base': #eeeded
+	),
+	ebb: (
+		'base': #e8e3e3,
+		'dark': darken(#e8e3e3, 8%),
+		'light': lighten(#e8e3e3, 4.7%)
+	),
+	rolling-stone: (
+		'base': #7d8186,
+		'transparent': transparentize(#7d8186, 0.4)
+	),
+  sushi: (
+    'base': #8ac23f,
+    'dark': darken(#8ac23f, 5%)
+  ),
+	ebony: (
+	 'base': #0a1021,
+	 'transparent': transparentize(#0a1021, 0.3)
+	),
+	ebony-clay: (
+    'base': #282f3a
+  ),
+	dove-gray: (
+		'base': #666666
+	),
+	dusty-gray: (
+		'base': #999999
+	),
+	silver: (
+		'base': #cccccc
+	),
+	curious-blue: (
+		'base': #1f8cd9,
+		'dark': darken(#1f8cd9, 5%),
+		'transparent': transparentize(#1f8cd9, 0.1)
+	)
+);
+
+// App colors.
+$app-colors: (
+	h: (
+		'foreground': map-get(map-get($palette, curious-blue), 'base')
+	),
+	p-li: (
+		'foreground': map-get(map-get($palette, dove-gray), 'base')
+	),
+	btn-app: (
+		'background': map-get(map-get($palette, sushi), 'base'),
+		'foreground': map-get(map-get($palette, white), 'base'),
+		'hover-focus': map-get(map-get($palette, sushi), 'dark')
+	),
+	btn-secondary: (
+		'foreground': map-get(map-get($palette, white), 'base'),
+		'border': map-get(map-get($palette, white), 'base')
+	),
+	btn-disabled: (
+		'background': map-get(map-get($palette, ebb), 'base')
+	),
+	ol-li-icon: (
+		'foreground': map-get(map-get($palette, curious-blue), 'base')
+	),
+	video-label: (
+		'background': map-get(map-get($palette, curious-blue), 'base'),
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	section: (
+		'background': map-get(map-get($palette, white), 'base')
+	),
+	navbar: (
+		'background': map-get(map-get($palette, ebony-clay), 'base')
+	),
+	nav-link: (
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	fa-bars: (
+		'foreground': map-get(map-get($palette, sushi), 'base'),
+		'collapsed': map-get(map-get($palette, sushi), 'dark')
+	),
+	footer: (
+		'background': map-get(map-get($palette, ebony-clay), 'base'),
+		'foreground': map-get(map-get($palette, rolling-stone), 'base')
+	),
+	hero: (
+		'foreground': map-get(map-get($palette, white), 'base'),
+		'overlay': map-get(map-get($palette, ebony), 'transparent')
+	),
+	hero-footer: (
+		'background': map-get(map-get($palette, curious-blue), 'transparent')
+	),
+	hero-footer-span: (
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	who: (
+		'background': map-get(map-get($palette, gallery), 'base')
+	),
+	poss-cont-second: (
+		'background': map-get(map-get($palette, curious-blue), 'base'),
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	fa-quote: (
+		'foreground': map-get(map-get($palette, white), 'transparent')
+	),
+	form-app: (
+		'background': map-get(map-get($palette, white), 'base')
+	),
+	accordion-app: (
+		'head-background': map-get(map-get($palette, white), 'base'),
+		'head-foreground': map-get(map-get($palette, curious-blue), 'base'),
+		'body-background': map-get(map-get($palette, white), 'dark'),
+		'body-foreground': map-get(map-get($palette, dove-gray), 'base')
+	),
+	specialist-icon: (
+		'background': map-get(map-get($palette, curious-blue), 'base')
+	),
+	claim-tickets: (
+		'background': map-get(map-get($palette, gallery), 'base')
+	),
+	production-icon: (
+		'foreground': map-get(map-get($palette, curious-blue), 'base')
+	),
+	join-us: (
+		'overlay': map-get(map-get($palette, curious-blue), 'transparent'),
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	tel-numb: (
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	join-us-btn: (
+		'background': map-get(map-get($palette, white), 'base'),
+		'foreground': map-get(map-get($palette, curious-blue), 'base'),
+		'hover-focus': map-get(map-get($palette, curious-blue), 'dark')
+	),
+	slide-page-header: (
+		'background': map-get(map-get($palette, curious-blue), 'base'),
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	schedule-topic: (
+		'time-frame': map-get(map-get($palette, curious-blue), 'base')
+	),
+	agenda-day-one: (
+		'cont-first': map-get(map-get($palette, ebb), 'base'),
+		'cont-second': map-get(map-get($palette, white), 'dark')
+	),
+	agenda-day-two: (
+		'overlay': map-get(map-get($palette, curious-blue), 'transparent'),
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	loc-cont-icon-span: (
+		'foreground': map-get(map-get($palette, curious-blue), 'base')
+	),
+	loc-over: (
+		'foreground': map-get(map-get($palette, ebb), 'base')
+	),
+	meet-speaker: (
+		'foreground': map-get(map-get($palette, white), 'base')
+	),
+	meet-team: (
+		'title': map-get(map-get($palette, curious-blue), 'base')
+	)
+);
+
+// H2 styles.
+$h2: (
+	margin-top: (
+		'mobile': 0,
+		'small': inherit
+	),
+	margin-bottom: (
+		'mobile': 20px,
+		'small': 30px
+	),
+	font-size: (
+		'mobile': 29px,
+		'small': 47px
+	),
+	font-weight: (
+		'mobile': 300
+	)
+);
+
+// H3 styles.
+$h3: (
+	font-size: (
+		'mobile': 20px,
+		'small': 21px
+	),
+	font-weight: (
+		'mobile': normal
+	)
+);
+
+// Paragraph styles.
+$p: (
+	font-size: (
+		'mobile': 15px
+	),
+	line-height: (
+		'mobile': 25px
+	)
+);
+
+// Span styles.
+$span: (
+	font-size: (
+		'mobile': 15px
+	)
+);
+
+// Anchor styles.
+$a: (
+	text-decoration: (
+		'mobile': none
+	)
+);
+
+// Ul styles.
+$ul: (
+	margin: (
+		'mobile': 0
+	),
+	padding: (
+		'mobile': 0
+	),
+	list-style-type: (
+		'mobile': none
+	)
+);
+
+// Li styles.
+$li: (
+	font-size: (
+		'small': 15px
+	),
+	margin: (
+		'mobile': 10px 0 0 0,
+		'small': 15px 0 0 0
+	)
+);
+
+// Ol styles.
+$ol: (
+	list-style-type: (
+		'mobile': none
+	),
+	margin: (
+		'mobile': 0 0 0 55px,
+		'small': 0 0 0 73px
+	),
+  padding: (
+		'mobile': 0
+	)
+);
+
+// Ol li styles.
+$ol-li: (
+	position: (
+		'mobile': relative
+	),
+	margin-bottom: (
+		'mobile': 20px
+	),
+	padding-left: (
+		'mobile': 0.5em
+	),
+	min-height: (
+		'mobile': 3em
+	)
+);
+
+// Ol li odd styles.
+$ol-li-odd: (
+	margin-bottom: (
+		'small': 30px
+	)
+);
+
+// Ol li before styles.
+$ol-li-before: (
+	width: (
+		'mobile': 1.5em
+	),
+	height: (
+		'mobile': 1.5em
+	),
+	position: (
+		'mobile': absolute
+	),
+	top: (
+		'mobile': 0
+	),
+	left: (
+		'mobile': -1.8em
+	),
+	font-size: (
+		'mobile': 30px,
+		'small': 40px
+	),
+	font-weight: (
+		'mobile': 300
+	),
+	text-align: (
+		'mobile': center
+	),
+	border-radius: (
+		'mobile': 50%
+	)
+);
+
+// Blockquote styles.
+$blockquote: (
+	font-style: (
+		'mobile': italic
+	),
+	text-align: (
+		'mobile': center
+	),
+	border-left: (
+		'mobile': none
+	)
+);
+
+// Blockquote text styles.
+$blockquote-text: (
+	font-size: (
+		'small': 20px
+	),
+	text-align: (
+		'mobile': left
+	),
+);
+
+// Button app styles.
+$btn-app: (
+	margin: (
+		'mobile': 0
+	),
+	padding: (
+		'mobile': 11px 16px,
+		'small': 20px 40px
+	),
+	letter-spacing: (
+		'mobile': 1px
+	),
+	text-transform: (
+		'mobile': uppercase
+	),
+	transition: (
+		'mobile': all .3s ease
+	)
+);
+
+// Button secondary styles.
+$btn-secondary: (
+	text-transform: (
+		'mobile': uppercase
+	),
+	transition: (
+		'mobile': all .3s ease
+	)
+);
+
+// Button round styles.
+$btn-round: (
+	width: (
+		'mobile': 1.5em
+	),
+	height: (
+		'mobile': 1.5em
+	),
+	border-radius: (
+		'mobile': 50%
+	),
+	z-index: (
+		'mobile': 1000
+	),
+	font-size: (
+		'mobile': 30px,
+		'small': 40px
+	),
+	text-align: (
+		'mobile': center
+	),
+	transition: (
+		'mobile': all .3s ease
+	)
+);
+
+// Button disabled styles.
+$btn-disabled: (
+	pointer-events: (
+		'mobile': none
+	)
+);
+
+// Button scroll top styles.
+$btn-scroll-top: (
+	width: (
+		'mobile': 1.6em
+	),
+	height: (
+		'mobile': 1.6em
+	),
+	position: (
+		'mobile': fixed
+	),
+	bottom: (
+		'mobile': 3%,
+		'small': 4%
+	),
+	right: (
+		'mobile': 4%,
+		'small': 3.5%
+	),
+	display: (
+		'mobile': none
+	)
+);
+
+// Button small styles.
+$btn-small: (
+	margin-top: (
+		'mobile': 10px
+	),
+	padding: (
+		'mobile': 10px
+	),
+	display: (
+		'mobile': block
+	)
+);
+
+
+// Button exit styles.
+$btn-exit: (
+	position: (
+		'mobile': fixed
+	),
+	top: (
+		'mobile': 3%,
+		'small': 4%
+	),
+	right: (
+		'mobile': 4%,
+		'small': 3.5%
+	)
+);
+
+// Form app styles.
+$form-app: (
+	padding: (
+		'mobile': 40px 15px 60px,
+		'small': 40px 15px 60px 15px
+	),
+	box-shadow: (
+    'mobile': 0 0px 32px 1px rgba(51, 51, 51, 0.2)
+  ),
+	font-size: (
+		'mobile': 14px !important
+	)
+);
+
+// Thumbnail styles.
+$thumbnail: (
+	border: (
+		'mobile': 0
+	),
+	margin-bottom: (
+		'mobile': 30px,
+		'small': 0
+	),
+	text-align: (
+		'mobile': left
+	)
+);
+
+// Thumbnail caption styles.
+$thumbnail-caption: (
+	padding: (
+		'mobile': 0
+	)
+);
+
+// Thumbnail header styles.
+$thumbnail-header: (
+	position: (
+		'mobile': relative
+	)
+);
+
+// Subject name styles.
+$subj-name: (
+	margin-bottom: (
+		'mobile': 5px
+	),
+	text-transform: (
+		'mobile': uppercase
+	),
+	font-size: (
+		'mobile': 14px,
+		'small': 17px
+	),
+	font-weight: (
+		'mobile': 500
+	),
+	letter-spacing: (
+		'mobile': 3px
+	)
+);
+
+// Subject title styles.
+$subj-title: (
+	font-size: (
+		'mobile': 13px,
+		'small': initial
+	),
+	font-style: (
+		'mobile': italic
+	)
+);
+
+// Accordion app styles.
+$accordion-app: (
+	text-align: (
+		'mobile': left
+	)
+);
+
+// Accordion app panel styles.
+$accordion-app-panel: (
+	margin-top: (
+		'mobile': 0 !important
+	),
+	border-radius: (
+		'mobile': 0
+	)
+);
+
+// Accordion app panel heading styles.
+$accordion-app-heading: (
+	padding: (
+		'mobile': 15px,
+		'small': 15px 15px 15px 30px
+	)
+);
+
+// Accordion app panel title styles.
+$accordion-app-title: (
+	font-size: (
+		'mobile': 14px,
+		'small': initial
+	),
+	font-weight: (
+		'mobile': 300
+	)
+);
+
+// Accordion app panel indicator styles.
+$accordion-app-indicator: (
+	transition: (
+		'mobile': all .1s linear
+	),
+	transform: (
+		'mobile': rotate(0deg)
+	)
+);
+
+// Accordion app panel indicator collapsed styles.
+$accordion-app-indicator-collapsed: (
+	transition: (
+		'mobile': all .1s linear
+	),
+	transform: (
+		'mobile': rotate(90deg)
+	)
+);
+
+// Accordion app panel body styles.
+$accordion-app-body: (
+	padding: (
+		'mobile': 20px,
+		'small': 30px 60px 80px 60px
+	)
+);
+
+// Specialist icons cont styles.
+$specialist-icons-cont: (
+	position: (
+		'medium': absolute
+	),
+	right: (
+		'medium': 0
+	),
+	top: (
+		'medium': 0
+	)
+);
+
+// Font awesome inverse icon styles.
+$fa-inverse: (
+	font-size: (
+		'mobile': 20px
+	)
+);
+
+// Vertical align styles.
+$vertical-align: (
+	display: (
+		'mobile': flex
+	),
+	box-align: (
+		'mobile': center
+	),
+	align-items: (
+		'mobile': center
+	),
+	flex-align: (
+		'mobile': center
+	),
+	height: (
+		'mobile': 100%
+	)
+);
+
+// Overlay styles.
+$overlay: (
+	height: (
+		'mobile': 100%
+	),
+	width: (
+		'mobile':	100%
+	),
+	position: (
+		'mobile':	absolute
+	),
+	top: (
+		'mobile': 0
+	),
+	left: (
+		'mobile': 0
+	),
+	content: (
+		'mobile': '""'
+	)
+);
+
+// B-roll video cont styles.
+$b-roll-cont: (
+	cursor: (
+		'mobile': none
+	),
+	z-index: (
+		'mobile': -1
+	),
+	position: (
+		'mobile': absolute
+	),
+	top: (
+		'mobile': 0
+	),
+	left: (
+		'mobile': 0
+	),
+	bottom: (
+		'mobile': 0
+	),
+	right: (
+		'mobile': 0
+	),
+	overflow: (
+		'mobile': hidden
+	)
+);
+
+// B-roll video styles.
+$b-roll: (
+	width: (
+		'mobile': auto
+	),
+	height: (
+		'mobile': 100%
+	)
+);
+
+// Video label styles.
+$video-label: (
+	padding: (
+		'mobile': 15px
+	)
+);
+
+// Video label h3 styles.
+$video-label-h3: (
+	margin-top: (
+		'mobile': 0
+	),
+	font-size: (
+		'mobile': 14px,
+		'small': 17px
+	)
+);
+
+// Navbar styles.
+$navbar: (
+  margin-bottom: (
+    'mobile': 0
+  ),
+	padding: (
+		'small': 30px 0
+	),
+	border: (
+		'mobile': none
+	),
+	font-size: (
+		'mobile': 15px
+	),
+	transition: (
+		'mobile': all .3s ease
+	),
+	z-index:(
+		'mobile': 99
+	)
+);
+
+// Navbar container styles.
+$nav-container: (
+	position: (
+		'mobile': relative
+	)
+);
+
+// Navbar header styles.
+$navbar-header: (
+	width: (
+		'small': 76px
+	),
+	height: (
+		'small': 40px
+	),
+	position: (
+		'mobile': relative
+	)
+);
+
+// Navbar toggle styles.
+$navbar-toggle: (
+	margin: (
+		'mobile': 14px 16px
+	),
+	padding: (
+		'mobile': 0
+	),
+	border: (
+		'mobile': none
+	)
+);
+
+// Navbar hamburger icon styles.
+$fa-bars: (
+	font-size: (
+		'mobile': 25px
+	)
+);
+
+// Navbar brand styles.
+$navbar-brand: (
+	background-image: (
+		'mobile': url(../img/pd_logo.png)
+	),
+	background-size: (
+		'mobile': contain
+	),
+	background-repeat: (
+		'mobile': no-repeat
+	),
+  width: (
+		'mobile': 60px,
+    'small': 100%
+  ),
+  height: (
+		'mobile': 33px,
+		'small': 100%
+  ),
+	margin-left: (
+		'mobile': 0 !important
+	),
+  padding: (
+    'mobile': 0
+  ),
+  position: (
+    'mobile': absolute
+  ),
+	top: (
+		'mobile': 50%,
+		'small': initial
+	),
+  left: (
+		'mobile': 50%,
+		'small': initial
+	),
+  transform: (
+		'mobile': translate(-50%, -50%),
+		'small': initial
+	)
+);
+
+// Navbar collapse styles.
+$navbar-collapse: (
+	text-align: (
+		'mobile': center
+	),
+	border: (
+		'mobile': none
+	),
+	background-color: (
+		'small': transparent
+	)
+);
+
+// Navbar right menu styles.
+$navbar-right: (
+	margin: (
+		'mobile': 15px,
+		'small': inherit
+	),
+	margin-right: (
+		'small': 0 !important
+	)
+);
+
+// Navbar item styles.
+$nav-item: (
+	margin: (
+		'mobile': 0
+	),
+	cursor: (
+		'small': pointer
+	),
+	font-size: (
+		'small': 10px,
+		'medium': initial
+	)
+);
+
+// Navbar link styles.
+$nav-link: (
+	padding: (
+		'mobile': 12px 15px
+	),
+	text-transform: (
+		'mobile': uppercase
+	)
+);
+
+// Navbar button styles.
+$btn-nav: (
+	margin-left: (
+		'small': 30px
+	),
+	padding: (
+		'mobile': 12px 30px
+	),
+	margin: (
+		'mobile': 0
+	),
+	font-size: (
+		'small': 10px,
+		'medium': initial
+	)
+);
+
+// Navbar scrolled styles.
+$nav-scrolled: (
+	box-shadow: (
+		'mobile': 0 1px 12px 0px rgba(51, 51, 51, 0.23)
+	)
+);
+
+// Footer styles.
+$footer: (
+  padding: (
+    'mobile': 40px 0
+  ),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Footer info logos styles.
+$footer-info-logos: (
+  margin-bottom: (
+    'mobile': 20px
+  )
+);
+
+// Footer info p styles.
+$footer-info-p: (
+  font-size: (
+    'mobile': 12px
+  )
+);
+
+// Footer info li styles.
+$footer-info-li: (
+	margin: (
+		'mobile': 0 0 10px 0,
+		'small': 0 70px 0 0
+	),
+  display: (
+    'small': inline-block
+  ),
+	text-align: (
+    'mobile': center,
+		'small': right
+  )
+);
+
+// Footer info li last-child styles.
+$footer-info-li-lc: (
+	margin: (
+		'mobile': 0
+	)
+);
+
+// Section styles.
+$section: (
+	padding: (
+		'mobile': 35px 0,
+		'small': 100px 0,
+		'medium': 160px 0
+	)
+);
+
+// Content ul styles.
+$content-ul: (
+  margin: (
+		'mobile': 0 0 0 52px,
+    'small': 0 0 0 38px
+  ),
+  padding: (
+    'mobile': 0
+  )
+);
+
+// Content icon styles.
+$content-i: (
+	font-size: (
+		'mobile': 21px,
+		'small': 23px
+	)
+);
+
+// Content li last child styles.
+$content-li-last: (
+	margin-bottom: (
+		'mobile': 0
+	)
+);
+
+// Hero section styles.
+$hero: (
+	height: (
+		'mobile': calc(100vh + 184px)
+	),
+	background-image: (
+		'mobile': url(../img/hero_bg.jpg)
+	),
+ 	background-size: (
+		'mobile': cover
+	),
+	background-position: (
+		'mobile': center top
+	),
+ 	background-repeat: (
+		'mobile': no-repeat
+	),
+ 	background-attachment: (
+		'mobile': fixed
+	),
+	position: (
+		'mobile': relative
+	),
+	padding: (
+		'mobile': 0
+	),
+	z-index: (
+		'mobile': 0
+	)
+);
+
+// Hero section vertical align styles.
+$hero-vertical-align: (
+	height: (
+		'mobile': calc(100% - 184px),
+		'medium': calc(100% - 164px)
+	)
+);
+
+// Hero section h1 styles.
+$hero-h1: (
+	font-size: (
+		'small': 55px
+	),
+	font-weight: (
+		'mobile': bold
+	),
+	margin-bottom: (
+		'small': 50px
+	)
+);
+
+// Hero section span styles.
+$hero-span: (
+	font-size: (
+		'small': 17px
+	),
+	font-style: (
+		'mobile': italic
+	)
+);
+
+// Hero section catalyst span styles.
+$cata-span: (
+	font-weight: (
+		'mobile': normal
+	),
+	font-style: (
+		'mobile': italic
+	)
+);
+
+// Hero footer section styles.
+$hero-footer: (
+	width: (
+		'mobile': 100%
+	),
+	padding: (
+		'mobile': 25px 0,
+		'small': 40px 0
+	),
+	position: (
+		'mobile': absolute
+	),
+	bottom: (
+		'mobile': 0
+	)
+);
+
+// Hero footer section span styles.
+$hero-footer-span: (
+	margin-bottom: (
+		'mobile': 20px,
+		'small': 0
+	),
+	font-size: (
+		'mobile': 17px,
+		'small': 25px,
+		'large': 30px
+	),
+	font-style: (
+		'mobile': italic
+	),
+	display: (
+		'mobile': block
+	)
+);
+
+// Hero footer section a styles.
+$hero-footer-a: (
+	margin: (
+		'small': 12px 0
+	)
+);
+
+// Who section styles.
+$who: (
+	padding: (
+		'small': 120px 0 170px 0,
+		'medium': 120px 0 320px 0
+	)
+);
+
+// Possibilities styles.
+$possibilities: (
+	padding-bottom: (
+		'small': 230px
+	)
+);
+
+// Possibilities half video styles.
+$poss-half-video: (
+	margin-top: (
+		'small': -200px,
+		'medium': -270px
+	),
+	counter-reset: (
+		'mobile': poss-numb-list-counter
+	)
+);
+
+// Possibilities half video cont first styles.
+$poss-half-video-cont-first: (
+	margin-right: (
+		'medium': -15px
+	)
+);
+
+// Possibilities half video cont second styles.
+$poss-half-video-cont-second: (
+	margin-left: (
+		'medium': -15px
+	),
+	padding: (
+		'small': 58px
+	),
+	font-weight: (
+		'small': 300
+	)
+);
+
+// Font awesome quote icon styles.
+$fa-quote: (
+	font-size: (
+		'small': 25px
+	),
+	margin-bottom: (
+		'small': 25px
+	)
+);
+
+// Possibilities numbers list before styles.
+$poss-numb-list-before: (
+	content: (
+		'mobile': counter(poss-numb-list-counter)
+	),
+	counter-increment: (
+		'mobile': poss-numb-list-counter
+	)
+);
+
+// Possibilities numbers h2 styles.
+$poss-numb-h2: (
+	margin: (
+		'mobile': 40px 0 30px 0,
+		'small': 100px 0 60px 0,
+		'medium': 130px 250px 60px 250px
+	),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Claim tickets styles.
+$claim-tickets: (
+	background-image: (
+		'small': url(../img/ticket_form_bg.jpg)
+	),
+	background-size: (
+		'small': cover
+	),
+	background-attachment: (
+		'small': fixed
+	),
+	background-repeat: (
+		'small': no-repeat
+	)
+);
+
+// Claim tickets form h3 styles.
+$claim-tickets-h3: (
+	margin: (
+		'small': 0 112px 35px 0
+	),
+	font-size: (
+		'small': 24px
+	),
+	font-weight: (
+		'small': normal
+	)
+);
+
+// Claim tickets form styles.
+$claim-tickets-form: (
+	margin-top: (
+		'small': -175px,
+		'medium': -230px
+	)
+);
+
+// Claim tickets form btn styles.
+// $claim-tickets-btn: (
+// 	margin: (
+// 		'mobile': 15px 0 0 0,
+// 		'small': 40px -10px
+// 	)
+// );
+
+// Production cont styles.
+$prod-cont: (
+	clear: (
+		'mobile': both
+	),
+	overflow: (
+		'mobile': hidden
+	)
+);
+
+// Production list cont styles.
+$prod-list-cont: (
+	margin: (
+		'small': 0 -15px
+	)
+);
+
+// Production h2 styles.
+$prod-h2: (
+	margin: (
+		'medium': 0 190px 30px 0
+	),
+	font-size: (
+		'small': 36px
+	)
+);
+
+// Production video cont styles.
+$prod-video-cont: (
+	margin-top: (
+		'mobile': 20px,
+		'small': 30px,
+		'medium': 0
+	)
+);
+
+// Join us styles.
+$join-us: (
+	background-image: (
+		'small': url(../img/join_us_bg.jpg)
+	),
+	background-size: (
+		'small': cover !important
+	),
+	background-attachment: (
+		'small': fixed
+	),
+	background-repeat: (
+		'small': no-repeat
+	),
+	position: (
+		'mobile': relative
+	),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Join us button styles.
+$join-us-btn: (
+	margin: (
+		'mobile': 20px
+	)
+);
+
+// Slide page styles.
+$slide-page: (
+	transform: (
+		'mobile': translateY(110%)
+	),
+	width: (
+		'mobile': 100%
+	),
+	height: (
+		'mobile': 100%
+	),
+	position: (
+		'mobile': fixed
+	),
+  top: (
+		'mobile': 0
+	),
+  left: (
+		'mobile': 0
+	),
+	transition: (
+		'mobile': transform .3s ease-in-out
+	)
+);
+
+// Slide page cont styles.
+$slide-page-cont: (
+	width: (
+		'mobile': 100%
+	),
+	height: (
+		'mobile': 100%
+	),
+	overflow-Y: (
+		'mobile': scroll
+	)
+);
+
+// Slide page header styles.
+$slide-page-header: (
+	padding-top: (
+		'mobile': 80px,
+		'small': 140px,
+		'medium': 160px
+	),
+	position: (
+		'mobile': relative
+	),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Slide page modal styles.
+$slide-page-modal: (
+	z-index: (
+		'mobile': 99999 !important
+	),
+	// width: (
+	// 	'mobile': 100%
+	// ),
+	// height: (
+	// 	'mobile': 100%
+	// ),
+	// overflow: (
+	// 	'mobile': hidden
+	// )
+);
+
+// Slide page modal close button styles.
+$recap-close: (
+	opacity: (
+		'mobile': 1
+	),
+	text-shadow: (
+		'mobile': none
+	)
+);
+
+// Slide page modal content styles.
+$slide-page-modal-content: (
+	width: (
+		'mobile': 100%
+	),
+	margin: (
+		'mobile': 0 15px,
+		'small': 0 auto
+	),
+	border: (
+		'mobile': none
+	)
+);
+
+// Slide page modal dialog styles.
+$slide-page-modal-dialog: (
+	height: (
+		'mobile': 100%
+	),
+	margin: (
+		'mobile': 0 auto
+	)
+);
+
+// Slide page modal header styles.
+$slide-page-modal-header: (
+	border: (
+		'mobile': 0
+	)
+);
+
+// Slide page modal body styles.
+$slide-page-modal-body: (
+	padding: (
+		'mobile': 0 !important
+	)
+);
+
+// Slide page overflow styles.
+$slide-page-overflow: (
+	z-index: (
+		'mobile': 999
+	),
+	transform: (
+		'mobile': translateY(0)
+	),
+	transition: (
+		'mobile': transform .3s ease-in-out
+	)
+);
+
+// Slide body overflow styles.
+$slide-body-overflow: (
+	overflow: (
+		'mobile': hidden
+	)
+);
+
+// Claim tickets slide page styles.
+$claim-tickets-slide: (
+	background-attachment: (
+		'small': inherit
+	)
+);
+
+// Learn p styles.
+$learn-p: (
+	font-size: (
+		'small': 17px
+	)
+);
+
+// Day 1 styles.
+$day-one: (
+	padding-top: (
+		'small': 80px
+	)
+);
+
+// Day 1 header styles.
+$day-one-header: (
+	float: (
+		'mobile': none,
+		'medium': left
+	)
+);
+
+// Day 1 h2 styles.
+$day-one-h2: (
+	margin: (
+		'medium': 0 0 60px -15px
+	)
+);
+
+// Day 1 content styles.
+$day-one-content: (
+	padding: (
+		'mobile': 25px 20px,
+		'small': 50px 40px,
+		'medium': 50px 50px 100px 45px
+	)
+);
+
+// Day 1 content h3 styles.
+$day-one-content-h3: (
+	margin-bottom: (
+		'mobile': 35px
+	)
+);
+
+// Schedule Topic styles.
+$schedule-topic: (
+	margin-bottom: (
+		'mobile': 20px
+	)
+);
+
+// Day 1 content first styles.
+$day-one-cont-first: (
+	margin-bottom: (
+		'mobile': 30px,
+		'medium': 0
+	),
+	padding-left: (
+		'medium': 0
+	)
+);
+
+// Day 1 content second styles.
+$day-one-cont-second: (
+	padding-right: (
+		'medium': 0
+	)
+);
+
+// Day 2 styles.
+$day-two: (
+	background-image: (
+		'small': url(../img/conversion_bg.jpg)
+	),
+	background-size: (
+		'small': cover !important
+	),
+	background-repeat: (
+		'small': no-repeat
+	),
+	padding-bottom: (
+		'small': 200px
+	),
+	position: (
+		'mobile': relative
+	)
+);
+
+// Day 2 h2 styles.
+$day-two-h2: (
+	margin-bottom: (
+		'small': 50px
+	)
+);
+
+// Day 2 h3 styles.
+$day-two-h3: (
+	margin: (
+		'medium': 0 183px 30px 0
+	)
+);
+
+// Location content styles.
+$loc-cont: (
+	padding: (
+		'mobile': 30px,
+		'small': 30px 10px
+	),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Location content icon styles.
+$loc-cont-icon: (
+	font-size: (
+		'mobile': 25px
+	)
+);
+
+// Location content h3 styles.
+$loc-cont-h3: (
+	margin-bottom: (
+		'mobile': 0
+	)
+);
+
+// Location content span styles.
+$loc-cont-span: (
+	font-size: (
+		'mobile': 12px
+	),
+	display: (
+		'mobile': block
+	)
+);
+
+// Contact form styles.
+$contact-form: (
+	text-align: (
+		'mobile': left
+	)
+);
+
+// Specialist h2 styles.
+$specialist-h2: (
+	margin: (
+		'small': 0 70px 80px 70px,
+		'medium': 0 240px 80px 240px
+	),
+	text-align: (
+		'mobile': center
+	)
+);
+
+// Meet img styles.
+$meet-img: (
+	margin-bottom: (
+		'mobile': 30px
+	)
+);
+
+// Meet h3 styles.
+$meet-h3: (
+	margin-top: (
+		'mobile': 0
+	)
+);
+
+// Meet subject title styles.
+$meet-subj-title: (
+	display: (
+		'mobile': block
+	),
+	margin-bottom: (
+		'mobile': 15px
+	)
+);
+
+// Testimonial video styles.
+$testimonial-video: (
+	margin: (
+		'mobile': 30px 0
+	)
+);
+
+// FAQ header styles.
+$faq-header: (
+	padding-bottom: (
+		'small': 200px
+	)
+);
+
+// FAQ h2 styles.
+$faq-h2: (
+	margin-bottom: (
+		'small': 80px
+	)
+);

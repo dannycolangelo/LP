@@ -30,6 +30,22 @@
     @include app-styles($hero-span);
   }
 
+  .call-now {
+    @include app-styles($call-now);
+
+    .call-now-title {
+      @include app-styles($call-now-title);
+    }
+
+    .call-now-number {
+      color: app-color(call-now-number, 'foreground');
+
+      &:hover, &:focus {
+        color: app-color(call-now-number, 'foreground');
+      }
+    }
+  }
+
   #cata-span {
     font-family: $accent-font;
 

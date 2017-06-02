@@ -468,6 +468,20 @@ blockquote {
     @media (min-width: 768px) {
       #hero #hero-span {
         font-size: 17px; } }
+  #hero .call-now {
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    text-transform: uppercase; }
+    @media (min-width: 768px) {
+      #hero .call-now {
+        font-size: 30px; } }
+    #hero .call-now .call-now-title {
+      font-style: italic; }
+    #hero .call-now .call-now-number {
+      color: #8ac23f; }
+      #hero .call-now .call-now-number:hover, #hero .call-now .call-now-number:focus {
+        color: #8ac23f; }
   #hero #cata-span {
     font-family: "Droid Serif", serif;
     font-weight: normal;

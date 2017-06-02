@@ -122,6 +122,9 @@ $app-colors: (
 		'foreground': map-get(map-get($palette, white), 'base'),
 		'overlay': map-get(map-get($palette, ebony), 'transparent')
 	),
+	call-now-number: (
+		'foreground': map-get(map-get($palette, sushi), 'base')
+	),
 	hero-footer: (
 		'background': map-get(map-get($palette, curious-blue), 'transparent')
 	),
@@ -1051,6 +1054,30 @@ $hero-span: (
 	font-size: (
 		'small': 17px
 	),
+	font-style: (
+		'mobile': italic
+	)
+);
+
+// Call Now section span styles.
+$call-now: (
+	margin-top: (
+		'mobile': 20px
+	),
+	font-size: (
+		'mobile': 23px,
+		'small': 30px
+	),
+	font-weight: (
+		'mobile': bold
+	),
+	text-transform: (
+		'mobile': uppercase
+	)
+);
+
+// Call Now title section span styles.
+$call-now-title: (
 	font-style: (
 		'mobile': italic
 	)
